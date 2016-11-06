@@ -1,0 +1,40 @@
+{
+  "name": "werwe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shiny.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/ babel src --watch --out-dir build",
+    "dev": "./node_modules/.bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangfaliang/learnReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangfaliang/learnReact/issues"
+  },
+  "homepage": "https://github.com/zhangfaliang/learnReact#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.18.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
