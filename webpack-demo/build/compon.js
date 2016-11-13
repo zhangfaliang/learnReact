@@ -42,18 +42,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var componment=__webpack_require__(1)
-	componment();
-
-/***/ },
-/* 1 */
 /***/ function(module, exports) {
 
-	module.exports= function (){
-		alert("==")
-	}
+	import  React,{ Component, PropTypes } from 'react';
 
 /***/ }
 /******/ ]);
