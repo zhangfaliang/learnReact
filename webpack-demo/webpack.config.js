@@ -29,9 +29,16 @@ module.exports={
       {
         test:/\.less$/,
         loader:'style!css!less'
+      },
+      {
+        test:/\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader:'url?limit=1000'
       }
 		]
 	},
+  //增加map文件  可怕的是自己没有什么自学能力 只看他人的dom不如直接看官方的wendang
+  devtool:'cheap-module-source-map',
+  //cheap-module-source-map
   // 决定解导入的时候不用在加后缀 
   resolve:{
     extenstion:['','.js','jsx','css']
@@ -42,7 +49,8 @@ module.exports={
       stats: { colors: true },//设置颜色
       port: 9099,//设置端口
       contentBase: 'build',//配置根目录
-      inline: true/*,
+      inline: true//比较低级的更新
+      /*,
       proxy: [
           {
             path: /^\/api\/(.*)/,

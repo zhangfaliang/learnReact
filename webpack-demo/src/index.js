@@ -8,7 +8,7 @@ class App extends Component{
 	}
 	render(){
 		return(
-			<h1>react</h1>
+			<h1>react34</h1>
 			)
 	}
 }
