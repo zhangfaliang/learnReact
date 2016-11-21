@@ -1,6 +1,7 @@
 import  React,{ Component, PropType } from  'react'
 import { render } from 'react-dom'
-console.log(render)
+import component from './component'
+console.log(component)
 class App extends Component{
 	constructor(props){
 		super(props);

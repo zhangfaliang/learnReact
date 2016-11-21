@@ -11,7 +11,7 @@ export default class Header{
 	}
 }*/
  
-module.exports= function (){
+export default function (){
 	alert("==")
 }
 
