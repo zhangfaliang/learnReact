@@ -15,7 +15,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js?[hash]',
+        filename: 'bundle.js?[hash:base64:5]',
     },
     resolve: {
       extension: ['', '.js', '.jsx', '.json']
@@ -32,11 +32,15 @@ module.exports = {
         },
         {
           test: /\.css/,
-          loaders:[
+          loader: ExtractTextPlugin.extract('style-loader',
+            'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
+            'postcss-loader')
+
+          /*[
             'style-loader',
             'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
             'postcss-loader'
-          ]
+          ]*/
         },
         {
           test: /\.less/,
@@ -61,10 +65,10 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js?[hash]'),
-      new ExtractTextPlugin("[name].css?[hash]", {
+      new ExtractTextPlugin("[name].css?[hash:base64:5]"/*, {
           allChunks: true,
           disable: false
-      }),
+      }*/),
       new HtmlWebpackPlugin({
       title:'shiny',
       template:'./src/index.html'
