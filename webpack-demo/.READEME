@@ -1,0 +1,49 @@
+###这是一个webpackdemo
+. 1 npm install 
+. 2 nom run dev
+
+--用到的插件有 
+ ## webpack.config.js配置
+ -- bable-core  bable-loader bable-preset-es2015 bable-preset-react
+ -- css-loader style-loader less-loader sass-loader url-loader  file-loaser
+## babelrc
+ -- webpack webpack-dev-server 
+ -- html-webpack-plugin
+## devtool
+ devtool :'cheap-module-source-map'
+ ##plugin 这些插件是要进行配置的
+--html-webpack-plugin
+--open-browser-webpack-plugin
+
+##module 是个对象{loaders}
+--loaders是个数组[{},{}]
+  --{test:正则匹配的对象,loader:'加载器'/loaders:['加载器','加载器']}
+
+##devtool来发调试的工具 key：value键值对
+  devtool:'cheap-module-souce-map'//廉价的模块代码
+
+## devServer是个对象
+	 {
+	 contentBase:'/static/',//在输出的路径上加一层
+	 pulicPath:'build',//设置访根路径问吧的
+	 hot:true,//热替换
+	 inline:true,//热加载
+	 stats:{colors:true},//颜色
+	 proress:true//进度条
+	 }
+
+## plugins：【】//第三方的库
+	--[
+		new htmlwebpackplugin({
+			title:'',
+			template:'路径'
+		}),
+		new openbrowserwebpackplugin({
+			url:'启动的服务地址'
+		})
+	]
+## resolve:{exstenstion:['','.js','.css','.json']}
+	--{
+		extenstion：['','.js','css','json']
+	}
+

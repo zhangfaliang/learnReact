@@ -1,63 +1,85 @@
 var path = require('path');
-
-function rewriteUrl(replacePath) {
-  return function (req, opt) {
-    var queryIndex = req.url.indexOf('?');
-    var query = queryIndex >= 0 ? req.url.substr(queryIndex) : "";
-
-    req.url = req.path.replace(opt.path, replacePath) + query;
-    console.log("rewriting ", req.originalUrl, req.url);
-  };
-}
-module.exports={
-	entry:'./src/index.js',
-	output:{
-		path:'./build',
-		filename:'bundle.js'
-	},
-  //module下面的loaders配置的每个对象都是某个加载器
-	module:{
-		loaders:[
-			{
-				test:/\.js$/,
-				loader:'babel'
-			},
-      {
-        test:/\.css$/,
-        loader:'style!css'
-      },
-      {
-        test:/\.less$/,
-        loader:'style!css!less'
-      },
-      {
-        test:/\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        loader:'url?limit=1000'
-      }
-		]
-	},
-  //增加map文件  可怕的是自己没有什么自学能力 只看他人的dom不如直接看官方的wendang
-  devtool:'cheap-module-source-map',
-  //cheap-module-source-map
-  // 决定解导入的时候不用在加后缀 
-  resolve:{
-    extenstion:['','.js','jsx','css']
-  },
-  //配置divserver的
-	devServer:{
-		  publicPath: "/static/",//产出文件
-      stats: { colors: true },//设置颜色
-      port: 9099,//设置端口
-      contentBase: 'build',//配置根目录
-      inline: true//比较低级的更新
-      /*,
-      proxy: [
-          {
-            path: /^\/api\/(.*)/,
-            target: "http://localhost:8080/",
-            rewrite: rewriteUrl('/$1\.json'),
-            changeOrigin: true
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var OpenBrowserWebpackPlugin = require('open-browser-webpack-plugin')
+var buildPath = path.resolve(__dirname, 'build');
+module.exports = {
+   entry: {
+     index: [
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:9099',
+        path.resolve(__dirname, 'src/index.js')
+      ],
+      vendor: ['react', 'react-dom']
+    },
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js?[hash]',
+    },
+    resolve: {
+      extension: ['', '.js', '.jsx', '.json']
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader:  'babel',
+          exclude: path.resolve(__dirname, 'node_modules'),
+          query: {
+          presets: ['es2015', 'react']
           }
-      ]*/
+        },
+        {
+          test: /\.css/,
+          loaders:[
+            'style-loader',
+            'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
+            'postcss-loader'
+          ]
+        },
+        {
+          test: /\.less/,
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        },
+        {
+          test:/.(png|jpg)$/,
+          loader:'url?limite=8192'
+        },
+        {
+          test:/.(woff|woff2|svg|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/,
+          loader:'url?limite=10000'
+        }
+      ]
+    },
+    postcss: [
+      require('postcss-nested')(),
+      require('cssnext')(),
+      require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+    ],
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js?[hash]'),
+      new ExtractTextPlugin("[name].css?[hash]", {
+          allChunks: true,
+          disable: false
+      }),
+      new HtmlWebpackPlugin({
+      title:'shiny',
+      template:'./src/index.html'
+      }),
+      new OpenBrowserWebpackPlugin({
+        url:'http://localhost:9099'
+      })
+    ],
+    devtool:'cheap-module-source-map',
+    resolve:{
+      extenstions:['','.js','.css','.json']
+    },
+    devServer:{
+      stats:{colors:true},
+      port:9099
     }
-}
+
+};
