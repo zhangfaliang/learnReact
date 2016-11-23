@@ -18,6 +18,9 @@ export default class DefaultProps extends Component{
 }
 DefaultProps.defaultProps=defaule
 //他可以他可以字面量的初始化判断传入的数据
+//新加标准 contructor 和propTypepe={
+/*	key:propTypes.string
+}*/
 DefaultProps.propTypes={
 	name:PropTypes.string
 }
