@@ -6,6 +6,7 @@ import TestState from './components/test/TestState.js'
 import DefaultProps from './components/test/DefaultProps.js'
 import AppCenter from './components/DefindComponent/AppCenter.js'
 import FindDom from './components/DOM/FindDom.js'
+import Refs from './components/DOM/Refs.js'
 const obj={
 	name:true,
 	type:'A'
@@ -35,5 +36,5 @@ class App extends Component{
 const RootEle=document.getElementById('app')
 //react cpmponent ReactDOM.render() 
 ReactDOM.render(
-	<FindDom {...obj}/>,RootEle
+	<Refs {...obj}/>,RootEle
 	)

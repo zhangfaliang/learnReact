@@ -8,7 +8,7 @@ export default class FindDom extends Component{
 	componentDidMount(){
 		let ele=findDOMNode(this.refs.contents),
 				ele2=this.refs.contents;
-				console.log(ele.innerHTML,ele2)
+				console.dir(ele2)
 	}
 	render(){
 		return(
