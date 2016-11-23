@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import * as styles  from './index.css'
 import TestState from './components/test/TestState.js'
 import DefaultProps from './components/test/DefaultProps.js'
+import AppCenter from './components/DefindComponent/AppCenter.js'
 const obj={
 	name:true,
 	type:'A'
@@ -33,5 +34,5 @@ class App extends Component{
 const RootEle=document.getElementById('app')
 //react cpmponent ReactDOM.render() 
 ReactDOM.render(
-	<DefaultProps {...obj}/>,RootEle
+	<AppCenter {...obj}/>,RootEle
 	)
