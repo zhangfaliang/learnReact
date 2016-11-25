@@ -7,6 +7,9 @@ import DefaultProps from './components/test/DefaultProps.js'
 import AppCenter from './components/DefindComponent/AppCenter.js'
 import FindDom from './components/DOM/FindDom.js'
 import Refs from './components/DOM/Refs.js'
+import EventDemo from './components/Event/EventDemo.js'
+import UseChildrenComponent from './components/Childrens/Childrens.js'
+import InputComponent from './components/InputForm/index.js'
 const obj={
 	name:true,
 	type:'A'
@@ -36,5 +39,5 @@ class App extends Component{
 const RootEle=document.getElementById('app')
 //react cpmponent ReactDOM.render() 
 ReactDOM.render(
-	<Refs {...obj}/>,RootEle
+	<InputComponent />,RootEle
 	)

@@ -14,6 +14,7 @@ module.exports = {
   filename:'[name].js?[hash]'
  },
  resolve:{
+  // 解决 延迟
   extenstion:['','.js','.css','.json']
  },
  module:{
