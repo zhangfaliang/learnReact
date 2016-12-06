@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/zhangfaliang/learnReact#readme",
   "devDependencies": {
+    "axios": "^0.15.2",
     "babel": "^6.5.2",
     "babel-cli": "^6.18.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
