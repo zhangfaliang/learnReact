@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+input{
+    border: none;
+}
+.outer{
+    width: 6.4rem;
+    height: 11.36rem;
+    background-color: #effbff;
+}
+.bg{
+    width: 6.4rem;
+    height: 3.05rem;
+    background: url("../../images/bgBule.png") no-repeat;
+    background-size: contain;
+}
+.imgDiv,img{
+    display: inline-block;
+    width: 3.56rem;
+    height: 2.36rem;
+    margin:.16rem .76rem .12rem .74rem;
+}
+.userMessage{
+    margin: -.61rem .5rem .6rem .54rem;
+}
+.con{
+    width: 1.01rem;
+    height: .29rem;
+    font-size: .28rem;
+    color: #188AE4;
+    margin-top: .8rem;
+}
+.iput{
+    width: 5rem;
+    height: .57rem;
+    margin-top: -.45rem;
+}
+input{
+    border: .01rem solid #97d4ff;
+    border-radius: .2rem;
+    padding-left: .24rem;
+}
+.conword,.conphone,.conMy,.sex{
+    width: 1.43rem;
+}
+
+.sex{
+    font-size: .28rem;
+    color: #188AE4;
+    width: .8rem;
+    height: .29rem;
+}
+.boyRa,.girlRa{
+    width: .43rem;
+    height: .44rem;
+    margin-top: .6rem;
+
+}
+.girlRa{
+    margin-top: 1rem;
+}
+.boy,.girl{
+    display: inline-block;
+    font-size: .28rem;
+    margin-left: .18rem;
+    color: #188AE4;
+}
+.submit{
+    position: relative;
+    left: 1.8rem;
+    bottom: .7rem;
+    width: 1.78rem;
+    height: .73rem;
+    background-color: #52AAEF;
+    border-radius: .3rem;
+    color: white;
+
+}
+.subCon{
+    position: absolute;
+    top: .15rem;
+    left: .53rem;
+    width: .76rem;
+    height: .36rem;
+    font-size: .3rem;
+}
