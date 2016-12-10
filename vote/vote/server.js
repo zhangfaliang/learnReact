@@ -67,7 +67,7 @@ app.post('/vote/register/data', urlencodedParser, function (req, res) {
    };
    }
    dateJson.userInfo.push(response)
-   res.end(JSON.stringify({message:'ok'}));
+   res.end(JSON.stringify({message:'ok',userInfor:response}));
 })
 
 app.post('/process_post', urlencodedParser, function (req, res) {
