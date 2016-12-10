@@ -54,7 +54,7 @@ app.get('/vote/index/data',function(req,res){
        console.log(req.query)
        var tempObj={},
             userInfoList=[];
-       userInfoList.push(dateJson.userInfo.map(function(item,index){
+      tempObj=dateJson.userInfo.map(function(item,index){
           var obj={}
           for(var attr in item){
             if(!/passWord/.test(attr)){
@@ -62,8 +62,8 @@ app.get('/vote/index/data',function(req,res){
             }
           }
           return obj;
-       }))
-        res.end(JSON.stringify({message:'ok',userInfoList:userInfoList}));
+       })
+        res.end(JSON.stringify({message:'ok',userInfoList:tempObj}));
 })
 /*
 首页：localhost:8080/vote/index
