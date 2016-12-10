@@ -4,21 +4,21 @@ var bodyParser = require('body-parser');
 var idNum=112;
 var dateJson={
   userInfo:[
-    {name:'shiny',passWord:'666',id:'99',sex:'男',voteNum:3},
-    {name:'pangpang',passWord:'888',id:'66',sex:'女',voteNum:4},
-    {name:'pangpang1',passWord:'56',id:'63',sex:'女',voteNum:13},
-    {name:'pangpang2',passWord:'56',id:'34',sex:'女',voteNum:34},
-    {name:'pangpang3',passWord:'76',id:'35',sex:'女',voteNum:32},
-    {name:'pangpang4',passWord:'78',id:'56',sex:'女',voteNum:38},
-    {name:'pangpang5',passWord:'678',id:'78',sex:'女',voteNum:83},
-    {name:'pangpang6',passWord:'78',id:'90',sex:'女',voteNum:37},
-    {name:'pangpang7',passWord:'888',id:'12',sex:'女',voteNum:53},
-    {name:'pangpang8',passWord:'888',id:'14',sex:'女',voteNum:36},
-    {name:'pangpang9',passWord:'888',id:'16',sex:'女',voteNum:53},
-    {name:'pangpang10',passWord:'888',id:'14',sex:'女',voteNum:23},
-    {name:'pangpang11',passWord:'888',id:'68',sex:'女',voteNum:356},
-    {name:'pangpang12',passWord:'888',id:'60',sex:'女',voteNum:310},
-    {name:'pangpang13',passWord:'888',id:'45',sex:'女',voteNum:320}
+ {name:'shiny',passWord:'666',id:'99',description: '哈哈',sex:'男',voteNum:3},
+    {name:'pangpang',passWord:'888',id:'66',description: '哈哈',sex:'女',voteNum:4},
+    {name:'pangpang1',passWord:'56',id:'63',description: '哈哈',sex:'女',voteNum:13},
+    {name:'pangpang2',passWord:'56',id:'34',description: '哈哈',sex:'女',voteNum:34},
+    {name:'pangpang3',passWord:'76',id:'35',description: '哈哈',sex:'女',voteNum:32},
+    {name:'pangpang4',passWord:'78',id:'56',description: '哈哈',sex:'女',voteNum:38},
+    {name:'pangpang5',passWord:'678',id:'78',description: '哈哈',sex:'女',voteNum:83},
+    {name:'pangpang6',passWord:'78',id:'90',description: '哈哈',sex:'女',voteNum:37},
+    {name:'pangpang7',passWord:'888',id:'12',description: '哈哈',sex:'女',voteNum:53},
+    {name:'pangpang8',passWord:'888',id:'14',description: '哈哈',sex:'女',voteNum:36},
+    {name:'pangpang9',passWord:'888',id:'16',description: '哈哈',sex:'女',voteNum:53},
+    {name:'pangpang10',passWord:'888',id:'14',description: '哈哈',sex:'女',voteNum:23},
+    {name:'pangpang11',passWord:'888',id:'68',description: '哈哈',sex:'女',voteNum:356},
+    {name:'pangpang12',passWord:'888',id:'60',description: '哈哈',sex:'女',voteNum:310},
+    {name:'pangpang13',passWord:'888',id:'45',description: '哈哈',sex:'女',voteNum:320}
   ]
 }
 /*项目需求
