@@ -20,7 +20,7 @@ $('.submit').on('click',function(){
             data=JSON.parse(data);
             console.log(data);
             if(data&&data.message=='ok'){
-                $.fn.cookie('userInfor',JSON.stringify(data.userInfor))
+                $.fn.cookie('userInfor',JSON.stringify(data.userInfor),{expires:7, path:'/'})
                 console.log($.fn.cookie('userInfor'));
             }
         },

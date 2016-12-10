@@ -33,6 +33,9 @@ app.get('/vote/register', function (req, res) {
 app.get('/vote/vote', function (req, res) {
    res.sendFile( __dirname + "/src/rule/rule.html" );
 })
+app.get('/vote/all/detail/data',function(req,res){
+   res.sendFile( __dirname + "/src/personInfo/personInfo.html" );
+})
 /*
 首页：localhost:8080/vote/index
 报名页：localhost:8080/vote/register
