@@ -9,6 +9,7 @@
 </head>
 <script src="/util/adaptive.js"></script>
 <script src="/util/zepto.min.js"></script>
+
 <body>
 <div class="outer">
     <div class="bg">
@@ -39,10 +40,10 @@
         </div>
         <div class="con sex">性别:</div>
         <div class="iput">
-            <input type="radio" class="boyRa"/><span class="boy">男</span>
+            <input type="radio" groupName="sex" class="boyRa"/><span class="boy">男</span>
         </div>
         <div class="iput">
-            <input type="radio" class="girlRa"/><span class="girl">女</span>
+            <input type="radio" groupName="sex" class="girlRa"/><span class="girl">女</span>
         </div>
         <div class="submit"><span class="subCon">提交</span></div>
 
@@ -50,6 +51,6 @@
 
 
 </div>
-
+<script src="/util/signUp.js"></script>
 </body>
 </html>
