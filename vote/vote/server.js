@@ -38,6 +38,20 @@ app.post("/vote/index/info",function(req,res){
    };
    res.end(JSON.stringify(response));
 })
+  
+app.post('/vote/register/data', urlencodedParser, function (req, res) {
+
+   // 输出 JSON 格式
+   response = {
+    username:req.body.username, 
+    mobile: req.body.mobile ,
+    description:req.body.description,
+    gender:req.body.gender ,
+    password:req.body.password
+   };
+   res.end(JSON.stringify(response));
+})
+
 app.post('/process_post', urlencodedParser, function (req, res) {
 
    // 输出 JSON 格式
