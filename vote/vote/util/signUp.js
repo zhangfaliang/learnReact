@@ -1,10 +1,10 @@
-var userName=$('.username').eq(0);
-var password=$('.password').eq(0);
-var confirm=$('.confirm').eq(0);
-var phone=$('.phone').eq(0);
-var myself=$('.myself').eq(0);
 $('.submit').on('click',function(){
-    console.log(userName.val());
+    var userName=$('.username').eq(0).val();
+    var password=$('.password').eq(0).val();
+    var confirm=$('.confirm').eq(0).val();
+    var phone=$('.phone').eq(0).val();
+    var myself=$('.myself').eq(0).val();
+
     var dataJson=JSON.stringify({
         username:userName,
         mobile:	phone,
