@@ -16,6 +16,16 @@ app.use(express.static(__dirname));
 app.get('/', function (req, res) {
    res.sendFile( __dirname + "/" + "index.html" );
 })
+app.get('/vote/register', function (req, res) {
+   res.sendFile( __dirname + "/src/signUp/signUp.html" );
+})
+
+/*
+首页：localhost:8080/vote/index
+报名页：localhost:8080/vote/register
+个人详细页：localhost:8080/vote/detail/{id}
+搜索页：localhost:8080/vote/search
+规则页：localhost:8080/vote/rule*/
 /*首页请求*/
 app.post("/vote/index/info",function(req,res){
   //验证用户 
