@@ -20,7 +20,8 @@
         </div>
         <div class="logo">
         </div>
-        <div class="enList"><a href='vote/register'>我要报名</a></div>
+        <div class="enList wJoin"><a href='vote/register'>我要报名</a></div>
+        <div class="enList isHidden userInfo"><a href='/vote/all/detail/data'>个人主页</a></div>
         <div class="search">
             <div class="search_div">
             <input type="text" class="contents" placeholder="请输入用户名或者编号">
@@ -76,5 +77,15 @@
         </ul>
     </div>
 </div>
+<script>
+    var userInfo= $.fn.cookie('userInfo');
+    if(userInfo){
+        $('.wJoin').hide();
+        $('.userInfo').show();
+    }else{
+        $('.wJoin').show();
+        $('.userInfo').hide();
+    }
+</script>
 </body>
 </html>

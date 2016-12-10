@@ -164,6 +164,8 @@ ul,li{
     width: 1.24rem;
     border-radius: .3rem;
     background-color: #52AAEF;
-
+}
+.isHidden{
+    display: none;
 }
 

@@ -17,7 +17,12 @@ $('.submit').on('click',function(){
         url:'/vote/register/data',
         data:dataJson,
         success:function(data){
+            data=JSON.parse(data);
             console.log(data);
+            if(data&&data.message=='ok'){
+                $.fn.cookie('userInfor',JSON.stringify(data.userInfor))
+                console.log($.fn.cookie('userInfor'));
+            }
         },
         error:function(e){
             console.log(e);
